@@ -50,7 +50,7 @@ export const projectsData = [
     },
     {
         id: 9,
-        src: "/images/projects/work4.jpg",
+        src: "/images/projects/ai.jpg",
         category: "Marketing",
         title: "AI Tools & Data-Driven Marketing Solutions"
     }
