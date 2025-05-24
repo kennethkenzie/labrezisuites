@@ -26,7 +26,7 @@ const SingleProject = () => {
                             </div>
                             <div className="single-info">
                                 <p>Client</p>
-                                <h3>Bento Studio</h3>
+                                <h3>iDental Care Uganda Limited</h3>
                             </div>
                             <div className="single-info">
                                 <p>Services</p>
