@@ -19,7 +19,7 @@ export const projectsData = [
     },
     {
         id: 4,
-        src: "/images/projects/work4.jpg",
+        src: "/images/projects/social.jpg",
         category: "Marketing",
         title: "Brand Building & Public Relations",
     },
@@ -44,7 +44,7 @@ export const projectsData = [
     },
     {
         id: 8,
-        src: "/images/projects/work4.jpg",
+        src: "/images/projects/report.jpg",
         category: "Marketing",
         title: "Market Intelligence Reports & Business Analytics"
     },
