@@ -14,12 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <BootstrapForBrowser />
+        {/* <BootstrapForBrowser /> */}
         <Preloader />
         <Header />
         {children}
-        <CallToAction />
-        <Footer />
+        {/* <CallToAction />
+        <Footer /> */}
       </body>
     </html>
   );
