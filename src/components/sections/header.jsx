@@ -1,83 +1,61 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { RiShakeHandsLine } from '@remixicon/react'
-import { menuList } from '@/utlits/fackData/menuList'
-import Image from 'next/image'
+import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FiX } from 'react-icons/fi';
+import { MdDarkMode } from 'react-icons/md';
+import { BsGlobe } from 'react-icons/bs';
 
-const Header = () => {
-    const pathName = usePathname()
-    const [isSticky, setisSticky] = useState(false)
+function Header() {
+  return (
+    <nav className="bg-[#1f1f27] text-white py-4 px-6 flex justify-between items-center">
+      {/* Left Menu Icon */}
+      <div className="flex items-center space-x-4">
+        <div className="text-xl cursor-pointer">
+          <span className="text-white">&#9776;</span>
+        </div>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <img src="/logo.svg" alt="Logo" className="h-6" />
+          <span className="text-white text-lg font-semibold">
+            william.<span className="text-[#f9cb33]">design</span>
+          </span>
+        </div>
+      </div>
 
-    useEffect(() => {
-        const navbar_collapse = document.querySelector(".navbar-collapse")
-        navbar_collapse.classList.remove("show")
-    }, [pathName])
+      {/* Center Navigation Links */}
+      <div className="hidden md:flex space-x-6 text-gray-300">
+        <a href="#" className="text-white">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
 
-    useEffect(() => {
-        window.addEventListener("scroll", stickyHeader)
-        return () => window.removeEventListener("scroll", stickyHeader)
-    }, [])
+      {/* Right Icons */}
+      <div className="flex items-center space-x-4">
+        {/* Language */}
+        <div className="flex items-center space-x-1 cursor-pointer">
+          <img
+            src="https://flagcdn.com/us.svg"
+            alt="English"
+            className="h-4 w-6 object-cover"
+          />
+          <span className="text-white text-sm">English</span>
+          <BsGlobe className="text-white text-sm" />
+        </div>
 
-    const stickyHeader = () => {
-        const scrollTop = window.scrollY
-        if (scrollTop > 85) {
-            setisSticky(true)
-        }
-        else {
-            setisSticky(false)
-        }
-    }
-    return (
-        <header className={`main-header ${isSticky ? "fixed-header" : ""}`}>
-            <div className="header-upper">
-                <div className="container">
-                    <div className="header-inner d-flex align-items-center">
-                        {/* <!-- START LOGO DESIGN AREA --> */}
-                        <div className="logo-outer">
-                            <div className="logo">
-                                <Link href="/">
-                                    <Image width={120} height={40} sizes='100vw' src={"/images/logo.png"} alt="Logo" title="Logo" />
-                                </Link>
-                            </div>
-                        </div>
-                        {/* <!-- / END LOGO DESIGN AREA -->
-                        <!-- START NAV DESIGN AREA --> */}
-                        <div className="nav-outer clearfix mx-auto">
-                            {/* <!-- Main Menu --> */}
-                            <nav className="main-menu navbar-expand-lg">
-                                <div className="navbar-header">
-                                    <div className="mobile-logo">
-                                        <Link href="/">
-                                            <Image width={75} height={25} sizes='100vw' src={"/images/logo.png"} alt="Logo" title="Logo" />
-                                        </Link>
-                                    </div>
-                                    {/* <!-- Toggle Button --> */}
-                                    <button type="button" className="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                        <span className="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div className="navbar-collapse collapse">
-                                    <ul className="navigation onepage clearfix">
-                                        {
-                                            menuList.map(({ id, label, path }) => <li key={id}><Link href={path} className="nav-link-click" >{label}</Link></li>)
-                                        }
-                                    </ul>
-                                </div>
-                            </nav>
+        {/* Social Icons */}
+        <FaFacebookF className="cursor-pointer" />
+        <FiX className="cursor-pointer" />
+        <FaYoutube className="cursor-pointer" />
+        <FaLinkedinIn className="cursor-pointer" />
 
-                        </div>
-                        <div className="menu-btns">
-                            <Link href="/contact" className="theme-btn">Hire Me <RiShakeHandsLine size={15} /> </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-    )
+        {/* Dark Mode Toggle */}
+        <div className="ml-4 cursor-pointer">
+          <MdDarkMode className="text-yellow-400 text-lg" />
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Header
+export default Header;
