@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className="col-lg-6">
                             <div className="copyright-text">
                                 <p>
-                                    Copyright @{year}, <Link href="/">Muyanja Robert</Link> All
+                                    Copyright @{year}, <Link href="/">Muyanja Robert</Link>
                                     Rights Reserved.
                                 </p>
                             </div>
